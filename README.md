@@ -11,5 +11,5 @@
 
  ### Procesos de servidor
 
-![img](imagenes/procesos.png)
+![img](imagenes/procesos.PNG)
 
