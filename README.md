@@ -1,2 +1,5 @@
-# Curso_postgress
-Curso
+Proyecto PostgreSQL Avanzado
+
+Autor Julio David Flores Conde
+
+
