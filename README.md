@@ -1,5 +1,9 @@
-Proyecto PostgreSQL Avanzado
+# Proyecto PostgreSQL Avanzado
 
-Autor Julio David Flores Conde
+## Autor Julio David Flores Conde
 
 
+## Versiones importantes
+  ### Linea del tiempo
+
+![img](image1.jpg)
