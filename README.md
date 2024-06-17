@@ -1,2 +1,2 @@
 # Curso_postgress
-Cusro 
+Curso
