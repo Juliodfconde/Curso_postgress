@@ -6,4 +6,4 @@
 ## Versiones importantes
   ### Linea del tiempo
 
-![img](image1.jpg)
+![img](imagenes/linea_tiempo.png)
