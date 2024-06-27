@@ -36,6 +36,28 @@ Las tablas están interconectadas mediante claves foráneas para mantener la int
 
 El uso de estas tablas y relaciones permite un manejo más eficiente y organizado de la información, facilitando el seguimiento y la toma de decisiones en la intercepción de tráficos aéreos ilegales.
 
+
+### Optiminizacion de consultas
+
+
+Se crea un índice para los países y se realiza la misma consulta antes y después de la creación del índice para comparar la mejora en el tiempo de respuesta.
+
+`creacion de indice`
+
+CREATE INDEX idx_pais_deteccion ON alertas.bitacora(id_pais_deteccion);
+
+`Consulta a sin indice y su resultado`
+
+EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
+
+![img](imagenes/sin_indice.PNG)
+
+`Consulta a con indice y su resultado` 
+
+EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
+
+![img](imagenes/con_indice.PNG)
+
 ### Diagrama Entidad-Relación
 
 ![img](imagenes/er_db_alertamiento.png)
