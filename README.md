@@ -225,6 +225,6 @@ ALTER TABLE IF EXISTS alertas.user_access
 
 END;
 
-### ARCHIVO DE BACKUP
+### Archivo para Restaurar la Base de Datos
 
 [Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos26062024.sql)
