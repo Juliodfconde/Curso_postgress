@@ -34,7 +34,7 @@ El uso de estas tablas y relaciones permite un manejo más eficiente y organizad
 
 ### Diagrama Entidad-Relación
 
-_(Inserta aquí el diagrama de entidad-relación si está disponible)_
+![img](imagenes/er_db_alertamiento.png)
 
 ### Código SQL para Generar la Base de Datos
 
