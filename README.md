@@ -251,6 +251,56 @@ EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
 
 ![img](imagenes/con_indice.PNG)
 
+
+### Creacion de un rol de solo lectura
+
+## Pasos para Crear el Rol de Solo Lectura
+
+### 1. Abrir pgAdmin y Conectarse al Servidor:
+- Abre pgAdmin y conéctate a tu servidor PostgreSQL.
+
+### 2. Crear el Rol de Solo Lectura:
+- En el panel de navegación de la izquierda, expande el árbol del servidor al que estás conectado.
+- Haz clic derecho en el nodo "Roles de Login" (Login/Group Roles) bajo el nodo del servidor y selecciona "Create" > "Login/Group Role".
+
+### 3. Configurar el Rol:
+
+#### En la pestaña "General":
+- Asigna un nombre al rol, por ejemplo, `role_consult`.
+
+![img](imagenes/role1.PNG)
+
+#### En la pestaña "Definition":
+- Establece una contraseña para el rol si es necesario.
+
+#### En la pestaña "Privileges":
+- Asegúrate de que solo las casillas "Can login" y "Inherit" estén marcadas.
+- Desmarca todas las demás opciones.
+
+![img](imagenes/role1.PNG)
+
+
+#### En la pestaña "Membership":
+- No es necesario agregar membresías adicionales para un rol de solo lectura.
+
+### 4. Asignar Privilegios de Solo Lectura:
+- Navega a la base de datos en la que deseas que el rol tenga acceso de solo lectura.
+- Haz clic derecho en la base de datos y selecciona "Properties".
+- En la ventana de propiedades de la base de datos, selecciona la pestaña "Privileges".
+- Haz clic en el icono de agregar rol (un signo más) y selecciona el rol `read_only` que creaste.
+- Asigna los siguientes privilegios:
+  - `CONNECT`: Permite al rol conectarse a la base de datos.
+  - `USAGE`: Permite al rol usar esquemas.
+  - `SELECT`: Permite al rol leer datos de las tablas.
+
+### 5. Aplicar Privilegios a Esquemas y Tablas:
+Aplicar privilegios de lectura a una tabla:
+
+![img](imagenes/tabla_role.PNG)
+
+
+
+
 ### Archivo de BACKUP de la base de datos.
 
 [Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos270620204.sql)
