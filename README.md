@@ -4,9 +4,6 @@
 
 ## NOMBRE DEL PROYECTO: BASE DE DATOS DE ALERTAMIENTOS AÉREOS
 
-### Archivo de BACKUP de la base de datos.
-
-[Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos26062024.sql)
 
 ### Descripción de la Base de Datos
 
@@ -256,4 +253,4 @@ EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
 
 ### Archivo de BACKUP de la base de datos.
 
-[Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos27062024.sql)
+[Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos270620204.sql)
