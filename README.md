@@ -4,7 +4,7 @@
 
 ## NOMBRE DEL PROYECTO: BASE DE DATOS DE ALERTAMIENTOS AÉREOS
 
-### Código SQL para Generar la Base de Datos
+### Archivo de BACKUP de la base de datos.
 
 [Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos26062024.sql)
 
