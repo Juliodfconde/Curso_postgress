@@ -4,6 +4,10 @@
 
 ## NOMBRE DEL PROYECTO: BASE DE DATOS DE ALERTAMIENTOS AÉREOS
 
+### Código SQL para Generar la Base de Datos
+
+[Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos26062024.sql)
+
 ### Descripción de la Base de Datos
 
 Esta base de datos está diseñada para registrar y gestionar todos los alertamientos detectados por el sistema de radares de la República Mexicana. Facilita el seguimiento y apoyo en la intercepción de tráficos aéreos ilegales mediante un sistema organizado de tablas y relaciones. A continuación, se describen las principales tablas y sus propósitos:
@@ -224,7 +228,3 @@ ALTER TABLE IF EXISTS alertas.user_access
     ON DELETE NO ACTION;
 
 END;
-
-### Archivo para Restaurar la Base de Datos
-
-[Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos26062024.sql)
