@@ -236,15 +236,15 @@ END;
 
 Se realiza la carga de datos en la tabla bitacora, dando click derecho sobre la tabla y seleccionar importar datos, y se hace el procedimiento de las siguientes fotos.
 
-`Paso 1`
+**Paso 1**
 ![img](imagenes/carga_datos.PNG)
 
 
-`Paso 2`
+**Paso 2**
 ![img](imagenes/carga_datos2.PNG)
 
 
-`Paso 3`
+**Paso 3**
 ![img](imagenes/carga_datos3.PNG)
 
 
