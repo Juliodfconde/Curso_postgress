@@ -538,7 +538,58 @@ ORDER BY
 
 
 
+### Reporte de alta disponibilidad y replicacion
 
+Para la base de datos db_alertamientos, las opciones de replicación y alta disponibilidad dependerán de los requisitos específicos de la aplicación. Si se prioriza la consistencia de datos y la seguridad, la replicación síncrona y el uso de herramientas como Patroni para alta disponibilidad serían las mejores opciones. Por otro lado, si se busca un mejor rendimiento, la replicación asíncrona seria mas adecuada
+
+
+
+
+### Monitoreo y Mantenimiento 
+
+**pg_stat**
+ es una extensión que recopila estadísticas sobre las consultas ejecutadas en la base de datos, proporcionando información sobre el número de ejecuciones, tiempos de ejecución, y otros datos relevantes.
+
+
+```sql
+ SELECT * FROM pg_stat_database;
+```
+
+
+
+**pgBadger**
+pgBadger es una herramienta de análisis de registros de PostgreSQL que genera informes detallados en formato HTML. Proporciona una vista completa del rendimiento y las actividades de la base de datos a partir de los archivos de registro.
+
+
+```sql
+pg_badger /var/log/postgresql/postgresql.log -o report.html
+```
+
+
+
+Estas herramientas permitirán monitorear el rendimiento de la base de datos db_alertamientos, identificar consultas costosas y obtener informes detallados sobre la actividad del sistema.
+
+
+
+Mantener la base de datos en buen estado es crucial para asegurar su rendimiento y estabilidad. Utilizacion de las siguientes herramientas  para darle mantenimiento a tu base de datos db_alertamientos.
+
+**Vacuum y Analyze**
+
+VACUUM limpia las tablas y recupera espacio en disco, mientras que ANALYZE actualiza las estadísticas utilizadas por el planificador de consultas.
+
+
+
+**Reindexación**
+
+ejecutar la siguiente instruccion
+
+
+```sql
+REINDEX DATABASE db_alertamientos;
+```
+
+
+Siguiendo estas prácticas de mantenimiento y utilizando las herramientas adecuadas, se mantiene ls base de datos db_alertamientos en buen estado, asegurando su rendimiento y disponibilidad. 
 
 ### Archivo de BACKUP de la base de datos.
 
