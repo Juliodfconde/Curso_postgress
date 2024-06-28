@@ -254,16 +254,16 @@ EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
 
 ### Creacion de un rol de solo lectura
 
-## Pasos para Crear el Rol de Solo Lectura
+#### Pasos para Crear el Rol de Solo Lectura
 
-### 1. Abrir pgAdmin y Conectarse al Servidor:
+#### 1. Abrir pgAdmin y Conectarse al Servidor:
 - Abre pgAdmin y conéctate a tu servidor PostgreSQL.
 
-### 2. Crear el Rol de Solo Lectura:
+#### 2. Crear el Rol de Solo Lectura:
 - En el panel de navegación de la izquierda, expande el árbol del servidor al que estás conectado.
 - Haz clic derecho en el nodo "Roles de Login" (Login/Group Roles) bajo el nodo del servidor y selecciona "Create" > "Login/Group Role".
 
-### 3. Configurar el Rol:
+#### 3. Configurar el Rol:
 
 #### En la pestaña "General":
 - Asigna un nombre al rol, por ejemplo, `role_consult`.
@@ -300,24 +300,24 @@ Aplicar privilegios de lectura a una tabla:
 
 
 
-# Crear una Copia de Seguridad en PostgreSQL usando pgAdmin
+## Crear una Copia de Seguridad en PostgreSQL usando pgAdmin
 
-## Pasos para Crear una Copia de Seguridad
+### Pasos para Crear una Copia de Seguridad
 
-### 1. Abrir pgAdmin y Conectarse al Servidor:
+#### 1. Abrir pgAdmin y Conectarse al Servidor:
 - Abre pgAdmin y conéctate a tu servidor PostgreSQL.
 
-### 2. Seleccionar la Base de Datos:
+#### 2. Seleccionar la Base de Datos:
 - En el panel de navegación de la izquierda, expande el árbol del servidor al que estás conectado.
 - Navega a la base de datos de la cual deseas crear una copia de seguridad.
 
-### 3. Iniciar la Herramienta de Copia de Seguridad:
+#### 3. Iniciar la Herramienta de Copia de Seguridad:
 - Haz clic derecho sobre la base de datos seleccionada.
 - Selecciona "Backup..." en el menú contextual.
 
-### 4. Configurar la Copia de Seguridad:
+#### 4. Configurar la Copia de Seguridad:
 
-#### En la pestaña "General":
+##### En la pestaña "General":
 - **Filename:** Especifica la ubicación y el nombre del archivo de copia de seguridad. Por ejemplo: `/path/to/backup/mi_base_de_datos.backup`
 - **Format:** Selecciona el formato de la copia de seguridad. Generalmente se recomienda el formato "Custom" (Personalizado) ya que permite una mayor flexibilidad en la restauración.
 
@@ -327,24 +327,24 @@ Aplicar privilegios de lectura a una tabla:
 
 
 
-# Configurar Replicación y Alta Disponibilidad en PostgreSQL usando pgAdmin
+## Configurar Replicación y Alta Disponibilidad en PostgreSQL usando pgAdmin
 
-## Introducción
+### Introducción
 
 Este documento detalla los pasos necesarios para configurar un proceso de replicación y alta disponibilidad en PostgreSQL utilizando pgAdmin. La replicación y alta disponibilidad son esenciales para asegurar la continuidad del servicio y la integridad de los datos en entornos de producción.
 
-## Prerrequisitos
+### Prerrequisitos
 
 - Dos o más servidores PostgreSQL (Primary y Standby).
 - pgAdmin instalado y configurado.
 - Acceso de superusuario a todos los servidores PostgreSQL involucrados.
 - Conexiones de red entre los servidores configuradas y funcionando.
 
-## Pasos para Configurar la Replicación y Alta Disponibilidad
+### Pasos para Configurar la Replicación y Alta Disponibilidad
 
-### 1. Configuración del Servidor Primario (Primary)
+#### 1. Configuración del Servidor Primario (Primary)
 
-#### Editar el archivo `postgresql.conf`
+##### Editar el archivo `postgresql.conf`
 - Ubica y abre el archivo `postgresql.conf` en el servidor primario.
 - Habilita la replicación configurando los siguientes parámetros:
 
@@ -355,53 +355,53 @@ max_wal_senders = 5
 wal_keep_segments = 32
 hot_standby = on
 ```
-#### Reiniciar el Servidor PostgreSQL
+##### Reiniciar el Servidor PostgreSQL
 ```sql
 sudo systemctl restart postgresql
 ```
 
 
-### 2. Configuración del Servidor Standby
-#### Realizar una Copia de Seguridad Base del Servidor Primario
+#### 2. Configuración del Servidor Standby
+##### Realizar una Copia de Seguridad Base del Servidor Primario
 En el servidor primario, realiza una copia de seguridad base que será utilizada para inicializar el servidor standby:
 
 ```sql
 pg_basebackup -h [IP_del_Primary] -D /var/lib/postgresql/[version]/main -U [usuario_replicacion] -Fp -Xs -P -R
 ```
 
-#### Editar el Archivo postgresql.conf
+##### Editar el Archivo postgresql.conf
 Ubica y abre el archivo postgresql.conf en el servidor standby.
 
-#### Configuración de Parámetros
+##### Configuración de Parámetros
 Configura los siguientes parámetros:
 ```sql
 hot_standby = on
 ```
 
-### 3. Configurar la Autenticación de Replicación
-#### Crear un Usuario de Replicación en el Servidor Primario
+#### 3. Configurar la Autenticación de Replicación
+##### Crear un Usuario de Replicación en el Servidor Primario
 Conéctate al servidor primario usando pgAdmin.
 
-#### Creación del Usuario
+##### Creación del Usuario
 Crea un usuario para la replicación:
 
 ```sql
 CREATE USER replicator WITH REPLICATION ENCRYPTED PASSWORD 'replicator_password';
 ```
 
-### 4. Iniciar el Servidor Standby
-#### Inicio del Servidor PostgreSQL
+#### 4. Iniciar el Servidor Standby
+##### Inicio del Servidor PostgreSQL
 Inicia el servidor PostgreSQL en el servidor standby:
 
 ```sql
 sudo systemctl start postgresql
 ```
 
-### 5. Verificar la Replicación
-#### Verificación del Estado de la Replicación
+#### 5. Verificar la Replicación
+##### Verificación del Estado de la Replicación
 Conéctate al servidor primario usando pgAdmin.
 
-#### Ejecución de la Consulta
+##### Ejecución de la Consulta
 Ejecuta la siguiente consulta para verificar el estado de la replicación:
 
 ```sql
