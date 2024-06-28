@@ -281,10 +281,12 @@ EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
 - Establece una contraseña para el rol si es necesario.
 
 #### En la pestaña "Privileges":
-- Asegúrate de que solo las casillas "Can login" y "Inherit" estén marcadas.
+- Asegúrate de que solo las casillas "Can login"  estén marcadas.
 - Desmarca todas las demás opciones.
 
 ![img](imagenes/role1.PNG)
+
+![img](imagenes/role_priv.PNG)
 
 
 #### En la pestaña "Membership":
