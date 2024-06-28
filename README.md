@@ -230,6 +230,23 @@ ALTER TABLE IF EXISTS alertas.user_access
 END;
 
 ```
+### Obtención de datos
+
+
+
+Se realiza la carga de datos en la tabla
+
+![img](imagenes/carga_datos.PNG)
+
+![img](imagenes/carga_datos2.PNG)
+
+![img](imagenes/carga_datos3.PNG)
+
+
+
+
+
+
 ### Optimizacion de consultas
 
 
