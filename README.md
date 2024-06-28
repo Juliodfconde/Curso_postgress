@@ -237,17 +237,24 @@ Se crea un índice para los países y se realiza la misma consulta antes y despu
 
 `creacion de indice`
 
+```sql
 CREATE INDEX idx_pais_deteccion ON alertas.bitacora(id_pais_deteccion);
+```
 
 `Consulta a sin indice y su resultado`
 
+
+```sql
 EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
+```
 
 ![img](imagenes/sin_indice.PNG)
 
 `Consulta a con indice y su resultado` 
 
+```sql
 EXPLAIN ANALYZE SELECT * FROM alertas.bitacora WHERE id_pais_deteccion=1;
+```
 
 ![img](imagenes/con_indice.PNG)
 
