@@ -451,6 +451,31 @@ SELECT * FROM pg_stat_replication;
 Deberías ver una entrada correspondiente al servidor standby indicando que la replicación está activa.
 
 
+### Consultas de prueba.
+
+#### Consulta 1
+
+**Obtener el número de detecciones por tipo de tráfico en un rango de fechas específico**
+```sql
+SELECT 
+    t.tipo AS tipo_trafico,
+    COUNT(b.id_registro) AS numero_detecciones
+FROM 
+    alertas.bitacora b
+JOIN 
+    alertas.cat_tipo_trafico t ON b.id_tipo_trafico = t.id_tipo
+WHERE 
+    b.fecha BETWEEN '2023-01-01' AND '2023-12-31'
+GROUP BY 
+    t.tipo
+ORDER BY 
+    numero_detecciones DESC;
+```
+**Resultado**
+
+
+![img](imagenes/consulta1.PNG)
+
 
 ### Archivo de BACKUP de la base de datos.
 
