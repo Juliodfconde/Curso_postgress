@@ -258,6 +258,9 @@ Se realiza la carga de datos en la tabla bitacora, dando click derecho sobre la 
 
 
 
+### Archivo de datos.
+
+[Descargar archivo de datos](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos270620204.sql)
 
 
 
@@ -503,6 +506,37 @@ ORDER BY
 
 
 ![img](imagenes/consulta2.PNG)
+
+
+
+
+#### Consulta 3
+
+**Obtener el número de detecciones por país y por estado en un turno específico**
+
+```sql
+SELECT 
+    p.pais AS pais_deteccion,
+    b.estado_deteccion,
+    COUNT(b.id_registro) AS numero_detecciones
+FROM 
+    alertas.bitacora b
+JOIN 
+    alertas.cat_pais p ON b.id_pais_deteccion = p.id_pais
+WHERE 
+    b.id_turno = 1
+GROUP BY 
+    p.pais, b.estado_deteccion
+ORDER BY 
+    numero_detecciones DESC;
+
+```
+**Resultado**
+
+
+![img](imagenes/consulta3.PNG)
+
+
 
 
 
