@@ -477,6 +477,35 @@ ORDER BY
 ![img](imagenes/consulta1.PNG)
 
 
+
+#### Consulta 2
+
+**Listar las detecciones con coordenadas específicas y el estado de detección**
+
+```sql
+SELECT 
+    b.id_registro,
+    b.fecha,
+    b.hora_deteccion,
+    b.latitud,
+    b.longitud,
+    b.estado_deteccion
+FROM 
+    alertas.bitacora b
+WHERE 
+    b.latitud BETWEEN 20.000000 AND 21.000000
+    AND b.longitud BETWEEN -100.000000 AND -99.000000
+ORDER BY 
+    b.fecha DESC, b.hora_deteccion DESC;
+
+```
+**Resultado**
+
+
+![img](imagenes/consulta2.PNG)
+
+
+
 ### Archivo de BACKUP de la base de datos.
 
 [Descargar archivo de restauración](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos270620204.sql)
