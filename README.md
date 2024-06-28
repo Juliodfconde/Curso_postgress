@@ -260,7 +260,7 @@ Se realiza la carga de datos en la tabla bitacora, dando click derecho sobre la 
 
 ### Archivo de datos.
 
-[Descargar archivo de datos](https://github.com/Juliodfconde/Curso_postgress/blob/main/backup/db_alertamientos270620204.sql)
+[Descargar archivo de datos](https://github.com/Juliodfconde/Curso_postgress/blob/main/nuevos_registros_500_corrected.csv)
 
 
 
